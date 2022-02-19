@@ -27,8 +27,8 @@ namespace MoodAnalyzerProgram
                 return "HAPPY";
             }
             else
-            { 
-                return "";
+            {
+                return null;
             }
         }
     }
