@@ -9,6 +9,7 @@ namespace TestingMoodAnalyzer
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
