@@ -28,7 +28,7 @@ namespace MoodAnalyzerTesting
         public void TestNullMood()
         {
             string message = "";
-            string expected = "HAPPY";
+            string expected = "";
             MoodAnalyzer moodAnalyzer = new MoodAnalyzer(message);
             string actual = moodAnalyzer.AnalyseMood();
             Assert.AreEqual(expected, actual);
