@@ -9,20 +9,32 @@ namespace MoodAnalyzerProgram
     public class MoodAnalyzer
     {
         public string message;
+        public string exceptionMsg = "Mood cannot ne Null";
+        public MoodAnalyzer()
+        { }
         public MoodAnalyzer(string message)
         {
             this.message = message;
         }
         public string AnalyseMood()
         {
-            if (this.message.ToLower().Contains("sad"))
+            try
             {
-                return "SAD";
+                if (this.message.ToLower().Contains("sad"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                return "HAPPY";
+                Console.WriteLine(exceptionMsg);
+                return exceptionMsg;
             }
+            
         }
     }
 }
