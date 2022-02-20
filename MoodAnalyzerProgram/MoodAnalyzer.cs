@@ -20,6 +20,10 @@ namespace MoodAnalyzerProgram
         {
             try
             {
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.EMPTY_MOOD, "Mood should not be empty");
+                }
                 if (this.message.ToLower().Contains("sad"))
                 {
                     return "SAD";
@@ -31,7 +35,7 @@ namespace MoodAnalyzerProgram
             }
             catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_MOOD, "Mood should not be null");
             }
         }
     }

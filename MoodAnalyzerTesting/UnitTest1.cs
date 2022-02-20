@@ -42,5 +42,20 @@ namespace MoodAnalyzerTesting
             string actual = moodAnalyzer.AnalyseMood();
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [DataRow(null, "Mood should not be null")]
+        [DataRow("", "Mood should not be empty")]
+        public void TestInformUser(string userInput, string expected)
+        {
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(userInput);
+            try
+            {
+                string actual = moodAnalyzer.AnalyseMood();
+            }
+            catch (MoodAnalysisException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
     }
 }
