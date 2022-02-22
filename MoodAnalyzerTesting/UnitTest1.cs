@@ -48,14 +48,8 @@ namespace MoodAnalyzerTesting
         public void TestInformUser(string userInput, string expected)
         {
             MoodAnalyzer moodAnalyzer = new MoodAnalyzer(userInput);
-            try
-            {
-                string actual = moodAnalyzer.AnalyseMood();
-            }
-            catch (MoodAnalysisException ex)
-            {
-                Assert.AreEqual(expected, ex.Message);
-            }
+            string actual = moodAnalyzer.AnalyseMood();
+            Assert.AreEqual(expected, actual);
         }
     }
 }
